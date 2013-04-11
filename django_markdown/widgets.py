@@ -6,7 +6,6 @@ from django.utils import simplejson
 
 
 class MarkdownWidget(forms.Textarea):
-
     class Media:
         js = (
             (settings.STATIC_URL or settings.MEDIA_URL) + 'django_markdown/jquery.markitup.js',
@@ -17,6 +16,7 @@ class MarkdownWidget(forms.Textarea):
             'screen': (
                 (settings.STATIC_URL or settings.MEDIA_URL) + 'django_markdown/skins/%s/style.css' % getattr(settings, 'MARKDOWN_EDITOR_SKIN', 'markitup'),
                 (settings.STATIC_URL or settings.MEDIA_URL) + 'django_markdown/markdown.css',
+
             )
         }
 
@@ -30,4 +30,7 @@ class MarkdownWidget(forms.Textarea):
         attrs["data-markdown-settings"] = simplejson.dumps(editor_settings);
         html = super(MarkdownWidget, self).render(name, value, attrs)
 
+
         return mark_safe(html)
+
+
