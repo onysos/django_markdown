@@ -21,19 +21,19 @@ mySettings = {
 		{name:'Heading 5', key:'5', openWith:'##### ', placeHolder:'Your title here...' },
 		{name:'Heading 6', key:'6', openWith:'###### ', placeHolder:'Your title here...' },
 		{separator:'---------------' },		
-		{name:'Bold', key:'B', openWith:'**', closeWith:'**'},
-		{name:'Italic', key:'I', openWith:'_', closeWith:'_'},
+		{name:'Bold', key:'B', openWith:'**', closeWith:'**', multiline:true},
+		{name:'Italic', key:'I', openWith:'_', closeWith:'_', multiline:true},
 		{separator:'---------------' },
-		{name:'Bulleted List', openWith:'- ' },
+		{name:'Bulleted List', openWith:'- ' , multiline:true},
 		{name:'Numeric List', openWith:function(markItUp) {
 			return markItUp.line+'. ';
-		}},
+		}, multiline:true},
 		{separator:'---------------' },
 		{name:'Picture', key:'P', replaceWith:'![[![Alternative text]!]]([![Url:!:http://]!] "[![Title]!]")'},
 		{name:'Link', key:'L', openWith:'[', closeWith:']([![Url:!:http://]!] "[![Title]!]")', placeHolder:'Your text to link here...' },
 		{separator:'---------------'},	
-		{name:'Quotes', openWith:'> '},
-		{name:'Code Block / Code', openWith:'(!(\t|!|`)!)', closeWith:'(!(`)!)'},
+		{name:'Quotes', openWith:'> ', multiline:true},
+		{name:'Code Block / Code', openWith:'```[![language (sql,python,bash)]!]\n', closeWith:'\n```'},
 		{separator:'---------------'},
 		{name:'Preview', call:'preview', className:"preview"}
 	]
